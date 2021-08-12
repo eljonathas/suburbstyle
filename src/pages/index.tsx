@@ -1,21 +1,35 @@
-import { Text } from '@chakra-ui/react'
-import { Container } from '../components/Container'
+import { Button, Flex, Box, Icon, Text } from '@chakra-ui/react'
+import Image from 'next/image'
+import { FaArrowRight } from 'react-icons/fa'
+import Link from 'next/link'
 
-const Index = () => {
+const IndexPage = () => {
   return (
-    <Container height="100vh">
-      <header>
-        <nav>
-          <Text>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Architecto, beatae recusandae non voluptates maiores odio voluptas
-            incidunt nisi. Accusantium tempore quas sit reprehenderit. Laborum
-            facilis architecto blanditiis deserunt cum corporis.
-          </Text>
-        </nav>
-      </header>
-    </Container>
+    <Flex
+      direction="column"
+      bg="gray.900"
+      w="100%"
+      h="100vh"
+      justifyContent="center"
+      alignItems="center"
+      gridGap="8"
+    >
+      <Box>
+        <Image src="/images/logo-suburb.png" width={50} height={50} />
+      </Box>
+
+      <Text textAlign="center" w="80" fontWeight="bold">
+        O site ainda está em desenvolvimento, mas você pode consultar todos os
+        links abaixo
+      </Text>
+
+      <Link href="/tree">
+        <Button bg="gray.800">
+          <Icon as={FaArrowRight} mr="2" /> Ver todos os links
+        </Button>
+      </Link>
+    </Flex>
   )
 }
 
-export default Index
+export default IndexPage
